@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Định dạng văn bản với CSS</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* 1. Định dạng Tiêu đề chính */
+      h1 {
+        color: #1a5276; /* Màu chữ xanh đậm */
+        text-align: center; /* Căn giữa tiêu đề */
+        font-size: 28px; /* Kích thước chữ */
+        font-weight: bold; /* Độ đậm của chữ */
+        text-transform: uppercase; /* Viết hoa toàn bộ */
+        margin-bottom: 20px;
+      }
+
+      /* 2. Định dạng Tiêu đề phụ (mô tả / tác giả) */
+      .sub-title {
+        color: #7f8c8d; /* Màu xám */
+        text-align: center; /* Căn giữa */
+        font-style: italic; /* Chữ in nghiêng */
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
+
+      /* 3. Định dạng Các đoạn văn bản */
+      p.content {
+        color: #2c3e50; /* Màu chữ tối */
+        font-size: 16px; /* Kích thước chữ */
+        text-align: justify; /* Căn đều 2 bên */
+        text-indent: 30px; /* Thụt lề đầu dòng 30px */
+        line-height: 1.6; /* Khoảng cách giữa các dòng */
+        margin-bottom: 15px;
+      }
+
+      /* 4. Nhấn mạnh văn bản đặc biệt */
+      .highlight {
+        color: #c0392b; /* Màu đỏ nổi bật */
+        font-weight: bold; /* In đậm */
+        text-decoration: underline; /* Gạch chân */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Nghệ Thuật Định Dạng Văn Bản Trong CSS</h1>
+      <p class="sub-title">Trích bài tập thực hành CSS cơ bản - CodeGym</p>
+
+      <p class="content">
+        CSS (Cascading Style Sheets) là ngôn ngữ quy định cách hiển thị của các
+        phần tử HTML trên trang web. Việc sử dụng thành thạo các thuộc tính định
+        dạng văn bản giúp nâng cao trải nghiệm người dùng và làm cho giao diện
+        trang web trở nên chuyên nghiệp hơn.
+      </p>
+
+      <p class="content">
+        Các thuộc tính như <span class="highlight">text-align</span> giúp căn
+        chỉnh vị trí văn bản, <span class="highlight">text-indent</span> tạo
+        khoảng thụt đầu dòng rõ ràng cho từng đoạn văn, cùng với
+        <span class="highlight">font-style</span> và
+        <span class="highlight">color</span> giúp nhấn mạnh những thông tin quan
+        trọng.
+      </p>
+    </div>
+  </body>
+</html>
