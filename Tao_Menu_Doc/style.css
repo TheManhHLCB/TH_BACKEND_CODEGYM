@@ -1,0 +1,47 @@
+/* 1. Thiết lập chung cho font chữ và reset khoảng cách */
+body {
+  font-family: Arial, sans-serif;
+}
+
+#menu,
+#menu ul,
+#menu li {
+  padding: 0;
+  margin: 0;
+}
+
+/* 2. Quy định kiểu dáng cho các phần tử menu cha và con */
+#menu li {
+  list-style: none; /* Bỏ chấm tròn đầu dòng */
+  position: relative; /* Làm mốc tọa độ cho menu con hiển thị theo */
+  width: 100px; /* Chiều rộng khung */
+  height: 30px; /* Chiều cao khung */
+  padding: 0 20px; /* Khoảng cách đệm trái/phải */
+  background-color: black; /* Màu nền mặc định */
+  line-height: 30px; /* Căn giữa chữ theo chiều dọc */
+  cursor: pointer; /* Đổi con trỏ chuột thành hình bàn tay */
+}
+
+/* 3. Quy định kiểu dáng thẻ liên kết (a) */
+#menu li a {
+  text-decoration: none; /* Bỏ gạch chân mặc định của liên kết */
+  color: white; /* Màu chữ trắng */
+}
+
+/* 4. Hiệu ứng Hover đổi màu nền khi rê chuột vào li */
+#menu li:hover {
+  background-color: red;
+}
+
+/* 5. Định vị và ẩn menu con (ul nằm trong ul) */
+#menu ul ul {
+  position: absolute; /* Định vị tuyệt đối dựa theo menu cha */
+  top: 0; /* Thẳng hàng trên cùng với menu cha */
+  left: 140px; /* Đẩy menu con sang bên phải (width 100px + padding 20px*2) */
+  visibility: hidden; /* Ẩn menu con mặc định */
+}
+
+/* 6. Hiển thị menu con khi hover vào menu cha */
+#menu ul li:hover ul {
+  visibility: visible; /* Hiện menu con */
+}
