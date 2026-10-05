@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook Simple UI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Fixed Header ở trên cùng -->
+    <header class="navbar">
+      <div class="logo">facebook</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Tìm kiếm trên Facebook" />
+      </div>
+      <div class="user-menu">
+        <span>Trang chủ</span>
+        <span>Thông báo</span>
+        <span>Cài đặt</span>
+      </div>
+    </header>
+
+    <!-- Khung giao diện chính (Main Layout) -->
+    <div class="main-container">
+      <!-- Sidebar bên trái -->
+      <aside class="sidebar-left">
+        <ul>
+          <li><b>Nguyễn Văn A</b></li>
+          <li>Bạn bè</li>
+          <li>Nhóm</li>
+          <li>Kỷ niệm</li>
+          <li>Đã lưu</li>
+          <li>Xem thêm</li>
+        </ul>
+      </aside>
+
+      <!-- Content ở giữa (News Feed) -->
+      <main class="feed">
+        <!-- Đăng bài -->
+        <div class="create-post">
+          <input type="text" placeholder="Bạn đang nghĩ gì thế?" />
+        </div>
+
+        <!-- Bài viết 1 -->
+        <div class="post">
+          <div class="post-header">
+            <strong>CodeGym Vietnam</strong>
+            <small>2 giờ trước</small>
+          </div>
+          <div class="post-content">
+            Chào mừng bạn đến với bài thực hành dựng giao diện Facebook bằng
+            HTML5 và CSS!
+          </div>
+        </div>
+
+        <!-- Bài viết 2 -->
+        <div class="post">
+          <div class="post-header">
+            <strong>Lập trình viên Web</strong>
+            <small>5 giờ trước</small>
+          </div>
+          <div class="post-content">
+            Fixed header giúp thanh điều hướng luôn nằm ở trên cùng màn hình khi
+            bạn cuộn trang!
+          </div>
+        </div>
+      </main>
+
+      <!-- Sidebar bên phải -->
+      <aside class="sidebar-right">
+        <h3>Người liên hệ</h3>
+        <ul>
+          <li>🟢 Nguyễn Văn B</li>
+          <li>🟢 Trần Thị C</li>
+          <li>⚪ Lê Văn D</li>
+        </ul>
+      </aside>
+    </div>
+  </body>
+</html>
