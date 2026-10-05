@@ -1,0 +1,64 @@
+/* 1. Thiết lập chung và thanh menu chính */
+body {
+  font-family: Arial, sans-serif;
+}
+
+#menu {
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  background-color: #000000;
+  border: 1px solid #cdcdcd;
+}
+
+#menu ul,
+#menu li {
+  padding: 0;
+  margin: 0;
+}
+
+/* 2. Xếp các mục menu chính nằm ngang bằng float: left */
+#menu li {
+  position: relative; /* Mốc tọa độ cho menu con thả xuống */
+  float: left; /* Dàn các thẻ li thành hàng ngang */
+  list-style: none; /* Bỏ chấm tròn đầu dòng */
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Định dạng cho các liên kết (thẻ a) */
+#menu li a {
+  width: 100px;
+  height: 30px;
+  display: block; /* Biến thẻ a thành khối để áp dụng width/height */
+  text-decoration: none; /* Bỏ gạch chân */
+  text-align: center; /* Căn chữ ra giữa */
+  line-height: 30px; /* Căn giữa chữ theo chiều dọc */
+  background-color: black;
+  color: white;
+}
+
+/* 4. Định dạng riêng cho thẻ a trong menu con (thả xuống) */
+#menu ul ul li a {
+  width: 200px; /* Mở rộng chiều rộng menu con */
+  text-align: left; /* Căn lề trái cho dễ đọc */
+  padding-left: 10px; /* Đệm nhẹ lề trái */
+}
+
+/* 5. Hiệu ứng Hover đổi màu nền */
+#menu li a:hover {
+  background-color: red;
+}
+
+/* 6. Định vị và ẩn menu con thả xuống */
+#menu ul ul {
+  position: absolute; /* Định vị tuyệt đối dưới thẻ li cha */
+  top: 30px; /* Đẩy xuống đúng ngay bên dưới thanh menu chính (height: 30px) */
+  left: 0; /* Căn lề thẳng hàng với li cha */
+  visibility: hidden; /* Ẩn menu con mặc định */
+}
+
+/* 7. Hiển thị menu con khi rê chuột vào mục menu cha */
+#menu ul li:hover ul {
+  visibility: visible;
+}
