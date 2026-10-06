@@ -1,100 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Web Xem Phim Hoạt Hình Trực Tuyến</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phim Hoạt Hình - Web Xem Phim Trực Tuyến</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header cố định (Fixed Header) -->
+    <header class="navbar">
+      <div class="header-container">
+        <!-- Logo bên trái -->
+        <div class="logo">
+          <a href="#">Phim<span>HoatHinh</span></a>
+        </div>
 
-    <!-- Header Cố Định (Fixed Header) -->
-    <header class="fixed-header">
-        <div class="nav-left">
-            <span class="logo">HoatHinhHD</span>
-            <a href="#" class="active">Trang Chủ</a>
-            <a href="#">Phim Bộ</a>
-            <a href="#">Phim Lẻ</a>
-            <a href="#">Liên Hệ</a>
+        <!-- Head-link (Các liên kết trang) -->
+        <nav class="head-link">
+          <a href="#" class="active">Phim hoạt hình</a>
+          <a href="#">Phim hoạt hình yêu thích</a>
+          <a href="#">Nhân vật hoạt hình</a>
+          <a href="#">Góp ý</a>
+        </nav>
+
+        <!-- Công cụ Tìm kiếm & Sắp xếp -->
+        <div class="header-tools">
+          <input
+            type="text"
+            placeholder="Tìm kiếm phim..."
+            class="search-input"
+          />
+          <select class="sort-select">
+            <option value="newest">Mới cập nhật</option>
+            <option value="views">Xem nhiều nhất</option>
+          </select>
         </div>
-        <div class="nav-right">
-            <!-- Ô Tìm kiếm -->
-            <input type="text" placeholder="Tìm kiếm phim hoạt hình..." class="search-box">
-            <a href="#">Đăng Nhập</a>
-        </div>
+      </div>
     </header>
 
-    <!-- Main Layout Container -->
-    <div class="container">
-        
-        <!-- Sidebar Trái: Danh sách phim hoạt hình -->
-        <aside class="sidebar-left">
-            <h3>Danh Sách Phim</h3>
-            <div class="filter-box">
-                <label>Sắp xếp:</label>
-                <select>
-                    <option>Mới nhất</option>
-                    <option>Xem nhiều nhất</option>
-                    <option>Đánh giá cao</option>
-                </select>
-            </div>
-            <ul class="movie-list">
-                <li><a href="#video-youtube" class="active-movie">Doraemon (Thuyết Minh Audio Việt - HD)</a></li>
-                <li><a href="#video-local">Conan Thám Tử Lừng Danh (Audio Việt - HD)</a></li>
-                <li><a href="#">Dragon Ball Super (Thuyết Minh)</a></li>
-                <li><a href="#">Naruto Shippuden (Vietsub HD)</a></li>
-                <li><a href="#">One Piece Đảo Hải Tặc (Audio Việt)</a></li>
-            </ul>
-        </aside>
+    <!-- Content Layout chính -->
+    <div class="main-container">
+      <!-- Left Content: Menu danh sách video có sẵn dạng Thumbnail -->
+      <aside class="left-content">
+        <h3>Danh sách Video</h3>
+        <div class="video-item active-item">
+          <img src="https://picsum.photos/id/1018/120/70" alt="Video 1" />
+          <div class="video-info">
+            <a href="#">Welcom đến với khách sạn Nobi</a>
+            <span class="views">5,147,528 lượt xem</span>
+            <span class="author">Channel Fun</span>
+          </div>
+        </div>
 
-        <!-- Main Content: Khung phát Video & Thông tin phim -->
-        <main class="main-content">
-            <h2>Phim Hoạt Hình Nổi Bật (Audio Việt - Chất Lượng HD)</h2>
-            <p class="movie-desc">Trải nghiệm xem phim hoạt hình chất lượng cao HD, âm thanh Audio Việt chuẩn, không quảng cáo gây phiền phức.</p>
-            
-            <!-- 1. Nhúng Video từ YouTube bằng <iframe> -->
-            <div class="video-section" id="video-youtube">
-                <h3>1. Doraemon - Tập Đặc Biệt (Nhúng từ YouTube - <iframe>)</h3>
-                <div class="iframe-responsive">
-                    <iframe 
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                        title="Doraemon Video" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
+        <div class="video-item">
+          <img src="https://picsum.photos/id/1025/120/70" alt="Video 2" />
+          <div class="video-info">
+            <a href="#">Suneo khổng lồ</a>
+            <span class="views">5,147,528 lượt xem</span>
+            <span class="author">Doreamon Vietsub</span>
+          </div>
+        </div>
 
-            <hr>
+        <div class="video-item">
+          <img src="https://picsum.photos/id/1035/120/70" alt="Video 3" />
+          <div class="video-info">
+            <a href="#">Còi điều khiển vật</a>
+            <span class="views">5,147,528 lượt xem</span>
+            <span class="author">Doreamon Vietsub</span>
+          </div>
+        </div>
 
-            <!-- 2. Sử dụng thẻ <video> trực tiếp -->
-            <div class="video-section" id="video-local">
-                <h3>2. Trailer Phim Hoạt Hình (Sử dụng thẻ HTML5 <video>)</h3>
-                <video controls width="100%" poster="https://via.placeholder.com/800x450?text=Hoat+Hinh+HD+Audio+Viet">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                    Trình duyệt của bạn không hỗ trợ thẻ video.
-                </video>
-            </div>
-        </main>
+        <div class="video-item">
+          <img src="https://picsum.photos/id/1050/120/70" alt="Video 4" />
+          <div class="video-info">
+            <a href="#">Chiếc máy tạo kẹo bông</a>
+            <span class="views">5,147,528 lượt xem</span>
+            <span class="author">Doreamon Vietsub</span>
+          </div>
+        </div>
+      </aside>
 
-        <!-- Sidebar Phải: Thông tin chất lượng & hỗ trợ (Không quảng cáo) -->
-        <aside class="sidebar-right">
-            <h3>Tính Năng Site</h3>
-            <div class="feature-info">
-                <p>✔️ <strong>Audio Việt:</strong> Lồng tiếng / Thuyết minh chuẩn.</p>
-                <p>✔️ <strong>Chất lượng HD:</strong> Hình ảnh sắc nét 1080p.</p>
-                <p>✔️ <strong>Tốc độ cao:</strong> Không giật lag, xem mượt mà.</p>
-                <p>🚫 <strong>Sạch 100%:</strong> Cam kết KHÔNG ĐẶT QUẢNG CÁO.</p>
-            </div>
-        </aside>
+      <!-- Right Content: Nội dung video chính được chọn & Mô tả -->
+      <main class="right-content">
+        <!-- 1. Phát Video chính dùng <iframe> (Ví dụ YouTube embed) -->
+        <div class="player-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Doraemon Ep 430 - Tớ là Mari đây & Gậy di chuyển"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+            "
+            allowfullscreen
+          >
+          </iframe>
+        </div>
 
+        <div class="video-title-details">
+          <h2>Tớ là Mari - <span>5,147,528 lượt xem</span></h2>
+          <p class="author-name">Tác giả: Fujiko F. Fujio</p>
+          <span class="badge-hd">Audio Việt - Chất lượng FullHD 1080p</span>
+        </div>
+
+        <!-- Mô tả chi tiết phim -->
+        <div class="movie-description">
+          <p>
+            Bộ phim kể về câu chuyện Thạch Sanh chém Trăn Tinh cứu dân, bắn Đại
+            Bàng cứu công chúa, dùng tiếng đàn nhân nghĩa đẹp tan quân xâm lược.
+            Nhưng cuộc đời Thạch Sanh luôn bị tên Lý Thông làm cho điêu đứng.
+            Cuối cùng chính nghĩa đã thắng. Tên Lý Thông gian ác bị đền tội. Mời
+            các bạn cùng đón xem và cảm nhận.
+          </p>
+          <p>
+            Bộ phim kể về câu chuyện Thạch Sanh chém Trăn Tinh cứu dân, bắn Đại
+            Bàng cứu công chúa, dùng tiếng đàn nhân nghĩa đẹp tan quân xâm lược.
+            Nhưng cuộc đời Thạch Sanh luôn bị tên Lý Thông làm cho điêu đứng.
+            Cuối cùng chính nghĩa đã thắng. Tên Lý Thông gian ác bị đền tội. Mời
+            các bạn cùng đón xem và cảm nhận.
+          </p>
+        </div>
+
+        <!-- 2. Nhúng Video bằng thẻ HTML5 <video> theo đúng tiêu chí bài tập -->
+        <div class="local-video-section">
+          <h3>Xem Trailer bằng thẻ &lt;video&gt; HTML5 (Audio Việt HD)</h3>
+          <video
+            controls
+            width="100%"
+            poster="https://picsum.photos/id/1018/800/400"
+          >
+            <source
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              type="video/mp4"
+            />
+            Trình duyệt của bạn không hỗ trợ thẻ video HTML5.
+          </video>
+        </div>
+      </main>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Bản quyền thuộc về Web Hoạt Hình Trực Tuyến. Mọi quyền được bảo lưu.</p>
+      <p>&copy; 2017 - 2026 - Thiết kế web bởi trang hoathinhvn.net</p>
     </footer>
-
-</body>
+  </body>
 </html>

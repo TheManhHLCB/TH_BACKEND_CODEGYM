@@ -5,207 +5,257 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  padding-top: 50px; /* Tránh bị Header cố định che mất nội dung */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f2f2;
+  padding-top: 60px; /* Tránh bị Fixed Header che mất nội dung */
+  color: #333;
 }
 
-/* 1. Fixed Header giữ cố định khi cuộn */
-.fixed-header {
+/* 1. Header cố định (Fixed Header) */
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px;
-  background-color: #1a1a1a;
+  height: 55px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  z-index: 1000;
+  height: 100%;
+  padding: 0 15px;
 }
 
-.fixed-header .logo {
-  color: #ff4757;
+/* Logo */
+.logo a {
+  font-size: 24px;
   font-weight: bold;
-  font-size: 18px;
-  margin-right: 15px;
-}
-
-.fixed-header a {
-  color: #9d9d9d;
+  color: #000;
   text-decoration: none;
-  padding: 15px 12px;
-  font-size: 14px;
-  display: inline-block;
+  font-style: italic;
 }
 
-.fixed-header a:hover,
-.fixed-header a.active {
-  color: #ffffff;
-  font-weight: bold;
+.logo span {
+  color: #d9534f;
+  background-color: #d9534f;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 2px;
 }
 
-.search-box {
-  padding: 5px 10px;
-  border-radius: 4px;
-  border: none;
-  outline: none;
+/* Head-link & CSS Hover tiêu chuẩn */
+.head-link a {
+  color: #333;
+  text-decoration: none; /* Bỏ gạch chân */
+  margin: 0 10px;
   font-size: 13px;
-}
-
-/* 2. Main Container */
-.container {
-  display: flex;
-  max-width: 1200px;
-  margin: 20px auto;
-  background-color: #ffffff;
-  min-height: calc(100vh - 110px);
-}
-
-/* Sidebar Trái */
-.sidebar-left {
-  width: 25%;
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-right: 1px solid #ddd;
-}
-
-.sidebar-left h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.filter-box {
-  margin-bottom: 15px;
-  font-size: 13px;
-}
-
-.filter-box select {
-  padding: 4px;
-}
-
-.movie-list {
-  list-style: none;
-}
-
-.movie-list li {
-  margin-bottom: 12px;
-}
-
-/* Yêu cầu CSS: Bỏ gạch chân, hover đổi màu và BÔI ĐẬM */
-.movie-list a {
-  color: #007bff;
-  text-decoration: none;
-  font-size: 14px;
-  display: block;
   transition: all 0.2s ease;
 }
 
-.movie-list a:hover {
-  color: #d63031;
-  font-weight: bold; /* Bôi đậm chữ khi hover */
+/* Yêu cầu chấm điểm: Hover bôi đậm và chuyển màu khác */
+.head-link a:hover,
+.head-link a.active {
+  color: #d9534f;
+  font-weight: bold; /* Bôi đậm text khi hover */
 }
 
-/* Nội dung chính ở giữa */
-.main-content {
-  width: 55%;
-  padding: 20px;
+.header-tools {
+  display: flex;
+  gap: 8px;
 }
 
-.main-content h2 {
-  font-size: 20px;
-  color: #2d3436;
-  margin-bottom: 10px;
+.search-input,
+.sort-select {
+  padding: 4px 8px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
-.movie-desc {
-  font-size: 13px;
-  color: #636e72;
-  margin-bottom: 20px;
+/* 2. Main Container */
+.main-container {
+  max-width: 1100px;
+  margin: 15px auto;
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  padding: 15px;
+  gap: 20px;
 }
 
-.video-section {
-  margin-bottom: 25px;
+/* 3. Left Content (Menu Video) */
+.left-content {
+  width: 32%;
+  border-right: 1px solid #eee;
+  padding-right: 15px;
 }
 
-.video-section h3 {
+.left-content h3 {
   font-size: 15px;
-  margin-bottom: 10px;
-  color: #0984e3;
+  margin-bottom: 15px;
+  color: #d9534f;
+  border-bottom: 2px solid #d9534f;
+  padding-bottom: 5px;
 }
 
-/* Iframe Responsive */
-.iframe-responsive {
+.video-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.video-item img {
+  width: 110px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.video-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-info a {
+  color: #333;
+  text-decoration: none; /* Bỏ gạch chân */
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+/* Hover link bài viết bên trái cũng bôi đậm & đổi màu */
+.video-info a:hover {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.video-info .views {
+  font-size: 11px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.video-info .author {
+  font-size: 11px;
+  color: #999;
+}
+
+/* 4. Right Content (Video chính) */
+.right-content {
+  width: 68%;
+}
+
+.player-wrapper {
   position: relative;
-  padding-bottom: 56.25%; /* Tỉ lệ 16:9 */
+  padding-bottom: 56.25%; /* Tỉ lệ 16:9 chuẩn HD */
   height: 0;
-  overflow: hidden;
+  background-color: #000;
+  margin-bottom: 12px;
 }
 
-.iframe-responsive iframe {
+.player-wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  border: none;
 }
 
-hr {
-  border: 0;
-  border-top: 1px solid #eee;
-  margin: 20px 0;
-}
-
-/* Sidebar Phải: Tính năng (Không quảng cáo) */
-.sidebar-right {
-  width: 20%;
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-left: 1px solid #ddd;
-}
-
-.sidebar-right h3 {
+.video-title-details h2 {
   font-size: 16px;
-  margin-bottom: 15px;
+  color: #333;
 }
 
-.feature-info p {
-  font-size: 13px;
+.video-title-details h2 span {
+  font-size: 12px;
+  color: #777;
+  font-weight: normal;
+}
+
+.author-name {
+  font-size: 12px;
+  color: #666;
+  margin: 4px 0 8px 0;
+}
+
+.badge-hd {
+  display: inline-block;
+  background-color: #5cb85c;
+  color: white;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
   margin-bottom: 12px;
-  line-height: 1.4;
-  color: #2d3436;
 }
 
-/* 3. Footer */
+.movie-description p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+.local-video-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed #ccc;
+}
+
+.local-video-section h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #337ab7;
+}
+
+/* 5. Footer */
 footer {
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
   text-align: center;
   padding: 15px;
-  font-size: 13px;
+  font-size: 12px;
+  color: #666;
+  margin-top: 20px;
 }
 
-/* 4. Responsive Design */
+/* 6. Responsive Design (RWD - Mức nâng cao) */
 @media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .sidebar-left,
-  .main-content,
-  .sidebar-right {
-    width: 100%;
-    border: none;
-  }
-
-  .fixed-header {
+  .navbar {
     height: auto;
+    position: relative; /* Trên điện thoại ưu tiên hiển thị gọn */
+  }
+
+  body {
+    padding-top: 0;
+  }
+
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .main-container {
     flex-direction: column;
     padding: 10px;
   }
 
-  body {
-    padding-top: 90px;
+  .left-content,
+  .right-content {
+    width: 100%;
+    border-right: none;
+    padding-right: 0;
   }
 }
