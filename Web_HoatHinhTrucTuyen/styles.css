@@ -6,134 +6,188 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  background-color: #f4f4f4;
+  padding-top: 50px; /* Tránh bị Header cố định che mất nội dung */
 }
 
-/* 1. Header Navigation */
-header {
+/* 1. Fixed Header giữ cố định khi cuộn */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
   background-color: #1a1a1a;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 15px;
+  padding: 0 20px;
+  z-index: 1000;
 }
 
-header a {
+.fixed-header .logo {
+  color: #ff4757;
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.fixed-header a {
   color: #9d9d9d;
   text-decoration: none;
-  padding: 15px 20px;
-  display: inline-block;
+  padding: 15px 12px;
   font-size: 14px;
+  display: inline-block;
 }
 
-header a:hover {
+.fixed-header a:hover,
+.fixed-header a.active {
   color: #ffffff;
+  font-weight: bold;
 }
 
-header a.active {
-  color: #ffffff;
-  background-color: #000000;
+.search-box {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 13px;
 }
 
-header .logo {
-  color: #ffffff;
-}
-
-/* 2. Main Layout Container */
+/* 2. Main Container */
 .container {
   display: flex;
-  flex: 1;
+  max-width: 1200px;
+  margin: 20px auto;
   background-color: #ffffff;
+  min-height: calc(100vh - 110px);
 }
 
 /* Sidebar Trái */
 .sidebar-left {
-  width: 15%;
-  background-color: #f1f1f1;
+  width: 25%;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar-left h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.filter-box {
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+
+.filter-box select {
+  padding: 4px;
+}
+
+.movie-list {
+  list-style: none;
+}
+
+.movie-list li {
+  margin-bottom: 12px;
+}
+
+/* Yêu cầu CSS: Bỏ gạch chân, hover đổi màu và BÔI ĐẬM */
+.movie-list a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  transition: all 0.2s ease;
+}
+
+.movie-list a:hover {
+  color: #d63031;
+  font-weight: bold; /* Bôi đậm chữ khi hover */
+}
+
+/* Nội dung chính ở giữa */
+.main-content {
+  width: 55%;
   padding: 20px;
 }
 
-.sidebar-left p {
-  margin-bottom: 15px;
+.main-content h2 {
+  font-size: 20px;
+  color: #2d3436;
+  margin-bottom: 10px;
 }
 
-.sidebar-left a {
-  color: #337ab7;
-  text-decoration: none;
-}
-
-/* Nội dung giữa */
-.main-content {
-  width: 70%;
-  padding: 30px;
-  text-align: left;
-}
-
-.main-content h1 {
-  font-size: 28px;
-  font-weight: normal;
-  margin-bottom: 15px;
-}
-
-.main-content p {
+.movie-desc {
   font-size: 13px;
-  line-height: 1.6;
-  color: #333;
+  color: #636e72;
   margin-bottom: 20px;
 }
 
-.main-content hr {
+.video-section {
+  margin-bottom: 25px;
+}
+
+.video-section h3 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #0984e3;
+}
+
+/* Iframe Responsive */
+.iframe-responsive {
+  position: relative;
+  padding-bottom: 56.25%; /* Tỉ lệ 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.iframe-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+hr {
   border: 0;
   border-top: 1px solid #eee;
   margin: 20px 0;
 }
 
-.main-content h3 {
-  font-size: 20px;
-  font-weight: normal;
-  margin-bottom: 10px;
-}
-
-/* Sidebar Phải (ADS) */
+/* Sidebar Phải: Tính năng (Không quảng cáo) */
 .sidebar-right {
-  width: 15%;
-  background-color: #f1f1f1;
-  padding: 20px 15px;
+  width: 20%;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-left: 1px solid #ddd;
 }
 
-.ads-box {
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  padding: 25px 0;
-  text-align: center;
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 20px;
+.sidebar-right h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.feature-info p {
+  font-size: 13px;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  color: #2d3436;
 }
 
 /* 3. Footer */
 footer {
-  background-color: #555555;
+  background-color: #1a1a1a;
   color: #ffffff;
   text-align: center;
-  padding: 20px;
-  font-size: 14px;
+  padding: 15px;
+  font-size: 13px;
 }
 
-/* ===================================================
-   RESPONSIVE DESIGN (RWD)
-   =================================================== */
-
-/* Khi màn hình nhỏ (Tablet & Mobile < 768px) chuyển về 1 cột */
+/* 4. Responsive Design */
 @media screen and (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .container {
     flex-direction: column;
   }
@@ -142,9 +196,16 @@ footer {
   .main-content,
   .sidebar-right {
     width: 100%;
+    border: none;
   }
 
-  .sidebar-left {
-    text-align: center;
+  .fixed-header {
+    height: auto;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  body {
+    padding-top: 90px;
   }
 }

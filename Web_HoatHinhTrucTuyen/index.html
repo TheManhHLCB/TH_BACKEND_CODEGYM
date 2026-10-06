@@ -1,68 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tạo Layout RWD</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Header Navigation -->
-    <header>
-      <div class="nav-left">
-        <a href="#" class="logo">Logo</a>
-        <a href="#" class="active">Home</a>
-        <a href="#">About</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
-      </div>
-      <div class="nav-right">
-        <a href="#">Login</a>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Xem Phim Hoạt Hình Trực Tuyến</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Cố Định (Fixed Header) -->
+    <header class="fixed-header">
+        <div class="nav-left">
+            <span class="logo">HoatHinhHD</span>
+            <a href="#" class="active">Trang Chủ</a>
+            <a href="#">Phim Bộ</a>
+            <a href="#">Phim Lẻ</a>
+            <a href="#">Liên Hệ</a>
+        </div>
+        <div class="nav-right">
+            <!-- Ô Tìm kiếm -->
+            <input type="text" placeholder="Tìm kiếm phim hoạt hình..." class="search-box">
+            <a href="#">Đăng Nhập</a>
+        </div>
     </header>
 
-    <!-- Main Content Layout -->
+    <!-- Main Layout Container -->
     <div class="container">
-      <!-- Sidebar Trái -->
-      <div class="sidebar-left">
-        <p><a href="#">Link</a></p>
-        <p><a href="#">Link</a></p>
-        <p><a href="#">Link</a></p>
-      </div>
+        
+        <!-- Sidebar Trái: Danh sách phim hoạt hình -->
+        <aside class="sidebar-left">
+            <h3>Danh Sách Phim</h3>
+            <div class="filter-box">
+                <label>Sắp xếp:</label>
+                <select>
+                    <option>Mới nhất</option>
+                    <option>Xem nhiều nhất</option>
+                    <option>Đánh giá cao</option>
+                </select>
+            </div>
+            <ul class="movie-list">
+                <li><a href="#video-youtube" class="active-movie">Doraemon (Thuyết Minh Audio Việt - HD)</a></li>
+                <li><a href="#video-local">Conan Thám Tử Lừng Danh (Audio Việt - HD)</a></li>
+                <li><a href="#">Dragon Ball Super (Thuyết Minh)</a></li>
+                <li><a href="#">Naruto Shippuden (Vietsub HD)</a></li>
+                <li><a href="#">One Piece Đảo Hải Tặc (Audio Việt)</a></li>
+            </ul>
+        </aside>
 
-      <!-- Nội dung chính ở giữa -->
-      <div class="main-content">
-        <h1>Welcome</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
-        </p>
-        <hr />
-        <h3>Test</h3>
-        <p>Lorem ipsum...</p>
-      </div>
+        <!-- Main Content: Khung phát Video & Thông tin phim -->
+        <main class="main-content">
+            <h2>Phim Hoạt Hình Nổi Bật (Audio Việt - Chất Lượng HD)</h2>
+            <p class="movie-desc">Trải nghiệm xem phim hoạt hình chất lượng cao HD, âm thanh Audio Việt chuẩn, không quảng cáo gây phiền phức.</p>
+            
+            <!-- 1. Nhúng Video từ YouTube bằng <iframe> -->
+            <div class="video-section" id="video-youtube">
+                <h3>1. Doraemon - Tập Đặc Biệt (Nhúng từ YouTube - <iframe>)</h3>
+                <div class="iframe-responsive">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        title="Doraemon Video" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
 
-      <!-- Sidebar Phải (Quảng cáo) -->
-      <div class="sidebar-right">
-        <div class="ads-box">
-          <p>ADS</p>
-        </div>
-        <div class="ads-box">
-          <p>ADS</p>
-        </div>
-      </div>
+            <hr>
+
+            <!-- 2. Sử dụng thẻ <video> trực tiếp -->
+            <div class="video-section" id="video-local">
+                <h3>2. Trailer Phim Hoạt Hình (Sử dụng thẻ HTML5 <video>)</h3>
+                <video controls width="100%" poster="https://via.placeholder.com/800x450?text=Hoat+Hinh+HD+Audio+Viet">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ thẻ video.
+                </video>
+            </div>
+        </main>
+
+        <!-- Sidebar Phải: Thông tin chất lượng & hỗ trợ (Không quảng cáo) -->
+        <aside class="sidebar-right">
+            <h3>Tính Năng Site</h3>
+            <div class="feature-info">
+                <p>✔️ <strong>Audio Việt:</strong> Lồng tiếng / Thuyết minh chuẩn.</p>
+                <p>✔️ <strong>Chất lượng HD:</strong> Hình ảnh sắc nét 1080p.</p>
+                <p>✔️ <strong>Tốc độ cao:</strong> Không giật lag, xem mượt mà.</p>
+                <p>🚫 <strong>Sạch 100%:</strong> Cam kết KHÔNG ĐẶT QUẢNG CÁO.</p>
+            </div>
+        </aside>
+
     </div>
 
     <!-- Footer -->
     <footer>
-      <p>Footer Text</p>
+        <p>&copy; 2026 Bản quyền thuộc về Web Hoạt Hình Trực Tuyến. Mọi quyền được bảo lưu.</p>
     </footer>
-  </body>
+
+</body>
 </html>
