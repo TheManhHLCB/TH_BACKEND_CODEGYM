@@ -1,0 +1,84 @@
+/* General Setup */
+body {
+  background-color: #f8f9fa;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+/* 1. NAVBAR - FLEXBOX (Content-first, 1D) */
+.navbar-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #212529;
+  color: white;
+  padding: 12px 24px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #adb5bd;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* 2. DASHBOARD - CSS GRID (Layout-first, 2D) */
+.grid-dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 120px;
+  gap: 15px;
+}
+
+.widget {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Bento Box span */
+.widget-large {
+  grid-column: span 2;
+  grid-row: span 2;
+  background-color: #e7f1ff;
+  border-color: #b6d4fe;
+  color: #084298;
+}
+
+/* Responsive Dashboard cho Mobile */
+@media (max-width: 768px) {
+  .grid-dashboard {
+    grid-template-columns: 1fr;
+  }
+  .widget-large {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
